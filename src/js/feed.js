@@ -21,7 +21,7 @@ function loadFeed(feed) {
 
     for (var i = 0; i < count; i++) {
         var github_item = feed[i];
-        console.log(github_item);
+        
         var payload = github_item.payload;
         var repo = github_item.repo.name;
         
