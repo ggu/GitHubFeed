@@ -21,7 +21,7 @@ function loadFeed(feed) {
 
     for (var i = 0; i < count; i++) {
         var github_item = feed[i];
-
+        console.log(github_item);
         var payload = github_item.payload;
         var repo = github_item.repo.name;
         
@@ -59,6 +59,9 @@ function getActivityAvatar(url) {
 function getActivityLink(type, payload, repo) {
     var link;
     switch (type) {
+    case "PublicEvent":
+        link = getOpenedSourcedLink(repo);
+        break;
     case "PushEvent":
         link = getCommitLink(payload, repo);
         break;
@@ -85,6 +88,10 @@ function getActivityLink(type, payload, repo) {
 
 function getCommitLink(payload, repo) {
     return $('<a href="' + GITHUB_URL + repo + '/commit/' + payload.commits[0].sha + '" />').addClass('event').html("Commit: " + payload.commits[0].message);
+}
+
+function getOpenedSourcedLink(repo) {
+    return $('<a href="' + GITHUB_URL + repo + '" />').addClass('event').html("Open sourced repository.");
 }
 
 function getIssueLink(payload) {
