@@ -1,0 +1,67 @@
+html {
+    font-family: Lora, 'Times New Roman', serif;
+} 
+
+h2 {
+    text-align: center; 
+    display: block;
+}
+
+.github {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0px auto;
+}
+
+.github .entry {
+    width: 100%;
+    min-height: 50px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.github .content {
+    float: right;
+    min-height: 50px;
+    width: 90%;
+}
+
+.github .user {
+    float: left;
+    width: 8%;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.github .content .event {
+    font-size: 18px;
+}
+
+.github .content .infocontainer {
+    width: 100%;
+    font-size: 16px;
+    min-height: 24px;
+}
+
+.github .content .infocontainer .repo {
+    float: none;
+}
+
+.github .content .infocontainer .date {
+    float: none;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .github .content .infocontainer {
+        width: 100%;
+        font-size: 16px;
+    }
+    .github .content .infocontainer .repo {
+        float: left;
+    }
+    .github .content .infocontainer .date {
+        float: right;
+    }
+}
